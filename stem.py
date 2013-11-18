@@ -27,30 +27,31 @@ def removeStopwords( chunk ):
 with open ("filename.txt", "r") as myfile:
     sentence=myfile.read().replace('\n', '')
 
-#reducing the sentece to all lower case letters
+#Reducing the sentece to all lower case letters
 sentence = sentence.lower()
 
-#tokenize the sentence
+#Rokenize the sentence
 tokens = nltk.word_tokenize(sentence)
 
-#removing punctuation and unicode characters
+#Removing punctuation and unicode characters
 tokens = words = re.findall(r'\w+', sentence,flags = re.UNICODE | re.LOCALE)
 
 #Remove stopwords from the list
 important_words = []
 important_words = removeStopwords(tokens)
 
-#performing porter stemming
+#Performing porter stemming
 stu = []
 stu = stemmed(important_words)
 
 
-#performing the final correction 
+#Removing duplicates
 final = []
 for word in stu:
 	if word not in final:
 		final.append(word)
 
-#remove numbers from the list
+#Remove numbers from the list
 final = [item for item in final if item.isalpha()]
+
 print final
