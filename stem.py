@@ -30,7 +30,7 @@ with open ("filename.txt", "r") as myfile:
 #Reducing the sentece to all lower case letters
 sentence = sentence.lower()
 
-#Rokenize the sentence
+#Tokenize the sentence
 tokens = nltk.word_tokenize(sentence)
 
 #Removing punctuation and unicode characters
